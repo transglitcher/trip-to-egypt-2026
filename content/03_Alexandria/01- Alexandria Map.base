@@ -1,0 +1,21 @@
+formulas:
+  Untitled: link("https://www.google.com/maps/search/" + file.name.replace(" ","+"),"Google Maps")
+properties:
+  formula.Untitled:
+    displayName: google maps link
+views:
+  - type: map
+    name: Alexandria Map
+    filters:
+      and:
+        - file.folder == "content/03_Alexandria"
+    order:
+      - file.backlinks
+      - formula.Untitled
+    center: "[31.20164, 29.89321]"
+    defaultZoom: 12.4
+    coordinates: note.coordinates
+    markerIcon: note.icon
+    markerColor: note.color
+    mapTiles:
+      - https://tiles.openfreemap.org/styles/liberty
